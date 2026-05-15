@@ -6,222 +6,51 @@
   <title>Renuka Aghi — Vedic Astrologer | Where Planets Meet Plants</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: #fdf6ee;
-      color: #2c1a0e;
-      line-height: 1.8;
-    }
-
-    /* NAV */
-    nav {
-      background: #2c1a0e;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .nav-brand {
-      color: #d4a843;
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
+    body { font-family: Georgia, 'Times New Roman', serif; background: #fdf6ee; color: #2c1a0e; line-height: 1.8; }
+    nav { background: #2c1a0e; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .nav-brand { color: #d4a843; font-size: 1.1rem; font-weight: bold; text-decoration: none; }
     .nav-links { display: flex; gap: 1.5rem; list-style: none; }
     .nav-links a { color: #fdf6ee; text-decoration: none; font-size: 0.95rem; }
     .nav-links a:hover { color: #d4a843; }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #2c1a0e 0%, #4a2c1a 50%, #2c1a0e 100%);
-      color: #fdf6ee;
-      text-align: center;
-      padding: 5rem 2rem;
-    }
-
-    .hero-symbol {
-      font-size: 2.5rem;
-      letter-spacing: 0.5rem;
-      color: #d4a843;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      color: #d4a843;
-      margin-bottom: 0.5rem;
-      font-style: italic;
-    }
-
-    .hero-tagline {
-      font-size: 1.2rem;
-      color: #c8b89a;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.1rem;
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      color: #9a8070;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-      color: #c8b89a;
-      font-size: 1.05rem;
-    }
-
-    .hero-btn {
-      display: inline-block;
-      background: #d4a843;
-      color: #2c1a0e;
-      padding: 0.85rem 2.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-
+    .hero { background: linear-gradient(135deg, #2c1a0e 0%, #4a2c1a 50%, #2c1a0e 100%); color: #fdf6ee; text-align: center; padding: 5rem 2rem; }
+    .hero-symbol { font-size: 2.5rem; letter-spacing: 0.5rem; color: #d4a843; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 2.8rem; color: #d4a843; margin-bottom: 0.5rem; font-style: italic; }
+    .hero-tagline { font-size: 1.2rem; color: #c8b89a; margin-bottom: 0.5rem; letter-spacing: 0.1rem; }
+    .hero-sub { font-size: 1rem; color: #9a8070; margin-bottom: 2.5rem; }
+    .hero p { max-width: 600px; margin: 0 auto 2.5rem; color: #c8b89a; font-size: 1.05rem; }
+    .hero-btn { display: inline-block; background: #d4a843; color: #2c1a0e; padding: 0.85rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: background 0.2s; }
     .hero-btn:hover { background: #b8922e; }
-
-    /* SECTIONS */
     section { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
-
-    section h2 {
-      font-size: 1.8rem;
-      color: #4a2c1a;
-      margin-bottom: 0.5rem;
-      border-bottom: 2px solid #d4a843;
-      padding-bottom: 0.5rem;
-      display: inline-block;
-    }
-
+    section h2 { font-size: 1.8rem; color: #4a2c1a; margin-bottom: 0.5rem; border-bottom: 2px solid #d4a843; padding-bottom: 0.5rem; display: inline-block; }
     section p { margin-top: 1rem; color: #3a2010; font-size: 1rem; }
-
-    /* SERVICES */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .service-card {
-      background: #fff8f0;
-      border: 1px solid #e8d5b0;
-      border-top: 4px solid #d4a843;
-      padding: 1.5rem;
-      border-radius: 4px;
-    }
-
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .service-card { background: #fff8f0; border: 1px solid #e8d5b0; border-top: 4px solid #d4a843; padding: 1.5rem; border-radius: 4px; }
     .service-card h3 { color: #4a2c1a; font-size: 1.1rem; margin-bottom: 0.5rem; }
     .service-card .price { color: #d4a843; font-size: 1.4rem; font-weight: bold; margin: 0.5rem 0; }
     .service-card p { color: #6a4a30; font-size: 0.9rem; margin-top: 0.3rem; }
-
-    /* ARTICLES */
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .article-card {
-      background: #fff8f0;
-      border: 1px solid #e8d5b0;
-      padding: 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.2s;
-    }
-
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .article-card { background: #fff8f0; border: 1px solid #e8d5b0; padding: 1.5rem; border-radius: 4px; text-decoration: none; color: inherit; transition: border-color 0.2s; }
     .article-card:hover { border-color: #d4a843; }
     .article-tag { color: #d4a843; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1rem; }
     .article-card h3 { color: #4a2c1a; margin: 0.4rem 0; font-size: 1rem; }
     .article-card p { color: #6a4a30; font-size: 0.88rem; margin-top: 0.3rem; }
-
-    .view-all {
-      display: inline-block;
-      margin-top: 1.5rem;
-      color: #d4a843;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* ABOUT */
+    .view-all { display: inline-block; margin-top: 1.5rem; color: #d4a843; text-decoration: none; font-weight: bold; }
     .about-section { background: #fff8f0; padding: 4rem 2rem; }
     .about-inner { max-width: 900px; margin: 0 auto; }
-
-    .credentials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .credential-tag {
-      background: #2c1a0e;
-      color: #d4a843;
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-    }
-
-    /* CONTACT */
-    .contact-box {
-      background: #2c1a0e;
-      color: #fdf6ee;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
+    .credentials { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+    .credential-tag { background: #2c1a0e; color: #d4a843; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; }
+    .contact-box { background: #2c1a0e; color: #fdf6ee; padding: 3rem 2rem; text-align: center; }
     .contact-box h2 { color: #d4a843; font-size: 1.8rem; margin-bottom: 1rem; }
     .contact-box p { color: #c8b89a; margin-bottom: 0.5rem; }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-
-    .contact-link {
-      color: #d4a843;
-      text-decoration: none;
-      font-size: 1rem;
-      border: 1px solid #d4a843;
-      padding: 0.6rem 1.5rem;
-      border-radius: 4px;
-      transition: background 0.2s;
-    }
-
+    .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .contact-link { color: #d4a843; text-decoration: none; font-size: 1rem; border: 1px solid #d4a843; padding: 0.6rem 1.5rem; border-radius: 4px; transition: background 0.2s; }
     .contact-link:hover { background: #d4a843; color: #2c1a0e; }
-
-    /* FOOTER */
-    footer {
-      background: #1a0e06;
-      color: #6a4a30;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.85rem;
-    }
-
+    footer { background: #1a0e06; color: #6a4a30; text-align: center; padding: 1.5rem; font-size: 0.85rem; }
     footer a { color: #d4a843; text-decoration: none; }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a class="nav-brand" href="index.html">☽ Renuka Vedic Astrologer</a>
     <ul class="nav-links">
@@ -233,7 +62,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-symbol">☉ ☽ ♂ ☿ ♃ ♀ ♄</div>
     <h1>Where Planets Meet Plants</h1>
@@ -243,11 +71,9 @@
     <a href="#contact" class="hero-btn">Book a Consultation</a>
   </div>
 
-  <!-- SERVICES -->
   <section id="services">
     <h2>Consultations</h2>
     <p>All readings are personalised — no generic predictions. Simple, practical and ethical guidance you can follow yourself. No gemstones. No expensive remedies.</p>
-
     <div class="services-grid">
       <div class="service-card">
         <h3>Single Question</h3>
@@ -267,10 +93,8 @@
     </div>
   </section>
 
-  <!-- ARTICLES -->
   <section id="articles">
     <h2>From the Blog</h2>
-
     <div class="articles-grid">
       <a class="article-card" href="writing/nakshatras-27-lunar-mansions.html">
         <div class="article-tag">Nakshatras</div>
@@ -288,18 +112,15 @@
         <p>The Vimshottari Dasha system — a roadmap written in the stars across 120 years.</p>
       </a>
     </div>
-
     <a class="view-all" href="writing/index.html">View all articles →</a>
   </section>
 
-  <!-- ABOUT -->
   <div class="about-section" id="about">
     <div class="about-inner">
       <h2>About Renuka Aghi</h2>
       <p>I am a practicing Vedic astrologer based in Gurgaon. Trained at Future Point New Delhi — one of India's most respected astrology institutions — I bring classical Jyotish knowledge to personalised, practical readings.</p>
       <p style="margin-top:1rem;">My work covers birth charts, Kundali Milan, Dasha analysis, career, marriage and health guidance. I offer consultations in both Hindi and English. My approach is rooted in classical Vedic tradition — ethical, honest and genuinely helpful.</p>
       <p style="margin-top:1rem;">I am also a natural living enthusiast and blogger — growing my own herbs and practicing Ayurvedic living daily. Astrology and nature are deeply connected in my life and work.</p>
-
       <div class="credentials">
         <span class="credential-tag">Future Point New Delhi</span>
         <span class="credential-tag">Birth Chart Readings</span>
@@ -311,22 +132,19 @@
     </div>
   </div>
 
-  <!-- CONTACT -->
   <div class="contact-box" id="contact">
     <h2>Book a Consultation</h2>
     <p>Available via WhatsApp and email.</p>
     <p>Consultations in Hindi and English.</p>
     <p>Based in Gurgaon, India.</p>
-
     <div class="contact-links">
-      <a class="contact-link" href="mailto:renuka_aghi@yahoo.com">✉ Email Me</a>
-      <a class="contact-link" href="https://wa.me/91XXXXXXXXXX">💬 WhatsApp</a>
+      <a class="contact-link" href="mailto:renuka_aghi@yahoo.com">✉ renuka_aghi@yahoo.com</a>
+      <a class="contact-link" href="https://wa.me/919313348867">💬 WhatsApp: +91 93133 48867</a>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Renuka Aghi · Vedic Astrologer · Gurgaon · <a href="mailto:renuka_aghi@yahoo.com">renuka_aghi@yahoo.com</a></p>
+    <p>© 2026 Renuka Aghi · Vedic Astrologer · Gurgaon · <a href="mailto:renuka_aghi@yahoo.com">renuka_aghi@yahoo.com</a> · <a href="https://wa.me/919313348867">+91 93133 48867</a></p>
   </footer>
 
 </body>
