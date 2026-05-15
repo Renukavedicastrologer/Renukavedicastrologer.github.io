@@ -1,129 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Renuka Vedic Astrologer — Jyotish Wisdom</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root { --saffron: #C8600A; --gold: #D4A017; --deep: #1A0F00; --cream: #FDF6E3; --muted: #7A6A50; --border: rgba(200,96,10,0.18); }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background: var(--cream); color: var(--deep); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renuka Aghi — Vedic Astrologer | Where Planets Meet Plants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  .top-bar {
-    background: var(--saffron);
-    text-align: center;
-    padding: 0.45rem 2rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    color: #fff;
-  }
-  .top-bar span { opacity: 0.75; margin-right: 0.5rem; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #fdf6ee;
+      color: #2c1a0e;
+      line-height: 1.8;
+    }
 
-  nav { position: sticky; top:0; z-index:100; background: rgba(253,246,227,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--saffron); letter-spacing: 0.04em; text-decoration: none; }
-  .nav-links { display:flex; gap: 2rem; list-style:none; align-items: center; }
-  .nav-links a { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--saffron); }
+    /* NAV */
+    nav {
+      background: #2c1a0e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-  .hero { text-align: center; padding: 5rem 2rem 4rem; position: relative; overflow: hidden; }
-  .hero::before { content: '☉'; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 18rem; color: rgba(212,160,23,0.07); line-height: 1; pointer-events: none; }
-  .hero-sub { font-size: 0.78rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--saffron); margin-bottom: 1.2rem; }
-  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 600; line-height: 1.1; color: var(--deep); margin-bottom: 1.5rem; }
-  .hero h1 em { color: var(--saffron); font-style: italic; }
-  .hero-desc { max-width: 520px; margin: 0 auto 2.5rem; color: var(--muted); font-size: 1rem; }
-  .divider { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 2.5rem; }
-  .symbol-row { text-align: center; padding: 2rem 0; font-size: 1.8rem; color: var(--gold); letter-spacing: 1rem; opacity: 0.5; }
+    .nav-brand {
+      color: #d4a843;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-  .section { padding: 3rem 2rem 5rem; max-width: 1100px; margin: 0 auto; }
-  .section-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--deep); margin-bottom: 2.5rem; }
-  .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-  .post-card { border: 1px solid var(--border); border-radius: 2px; padding: 2rem; background: #fff; transition: transform 0.25s, box-shadow 0.25s; text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; }
-  .post-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--saffron), var(--gold)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-  .post-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-  .post-card:hover::before { transform: scaleX(1); }
-  .post-tag { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--saffron); margin-bottom: 0.8rem; }
-  .post-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; line-height: 1.3; color: var(--deep); margin-bottom: 0.8rem; }
-  .post-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
-  .post-date { font-size: 0.75rem; color: var(--gold); }
-  .view-all { display: inline-block; margin-top: 2.5rem; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--saffron); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; }
-  .view-all:hover { border-color: var(--saffron); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: #fdf6ee; text-decoration: none; font-size: 0.95rem; }
+    .nav-links a:hover { color: #d4a843; }
 
-  .about-strip { background: var(--deep); color: var(--cream); padding: 4rem 2rem; text-align: center; }
-  .about-strip .section-label { color: var(--gold); }
-  .about-strip h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; font-style: italic; margin: 0.5rem 0 1rem; color: #fff; }
-  .about-strip p { max-width: 560px; margin: 0 auto 1.2rem; color: rgba(253,246,227,0.65); font-size: 0.95rem; }
-  .about-email { color: var(--gold) !important; font-size: 0.95rem; letter-spacing: 0.05em; }
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #2c1a0e 0%, #4a2c1a 50%, #2c1a0e 100%);
+      color: #fdf6ee;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
 
-  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); }
-  footer span { color: var(--saffron); }
-  .footer-email { display: block; margin-top: 0.5rem; font-size: 0.82rem; color: var(--saffron); }
-</style>
+    .hero-symbol {
+      font-size: 2.5rem;
+      letter-spacing: 0.5rem;
+      color: #d4a843;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #d4a843;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      color: #c8b89a;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1rem;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: #9a8070;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      color: #c8b89a;
+      font-size: 1.05rem;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: #d4a843;
+      color: #2c1a0e;
+      padding: 0.85rem 2.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .hero-btn:hover { background: #b8922e; }
+
+    /* SECTIONS */
+    section { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+
+    section h2 {
+      font-size: 1.8rem;
+      color: #4a2c1a;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #d4a843;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    section p { margin-top: 1rem; color: #3a2010; font-size: 1rem; }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: #fff8f0;
+      border: 1px solid #e8d5b0;
+      border-top: 4px solid #d4a843;
+      padding: 1.5rem;
+      border-radius: 4px;
+    }
+
+    .service-card h3 { color: #4a2c1a; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .service-card .price { color: #d4a843; font-size: 1.4rem; font-weight: bold; margin: 0.5rem 0; }
+    .service-card p { color: #6a4a30; font-size: 0.9rem; margin-top: 0.3rem; }
+
+    /* ARTICLES */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .article-card {
+      background: #fff8f0;
+      border: 1px solid #e8d5b0;
+      padding: 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .article-card:hover { border-color: #d4a843; }
+    .article-tag { color: #d4a843; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1rem; }
+    .article-card h3 { color: #4a2c1a; margin: 0.4rem 0; font-size: 1rem; }
+    .article-card p { color: #6a4a30; font-size: 0.88rem; margin-top: 0.3rem; }
+
+    .view-all {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #d4a843;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ABOUT */
+    .about-section { background: #fff8f0; padding: 4rem 2rem; }
+    .about-inner { max-width: 900px; margin: 0 auto; }
+
+    .credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .credential-tag {
+      background: #2c1a0e;
+      color: #d4a843;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: #2c1a0e;
+      color: #fdf6ee;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .contact-box h2 { color: #d4a843; font-size: 1.8rem; margin-bottom: 1rem; }
+    .contact-box p { color: #c8b89a; margin-bottom: 0.5rem; }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .contact-link {
+      color: #d4a843;
+      text-decoration: none;
+      font-size: 1rem;
+      border: 1px solid #d4a843;
+      padding: 0.6rem 1.5rem;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .contact-link:hover { background: #d4a843; color: #2c1a0e; }
+
+    /* FOOTER */
+    footer {
+      background: #1a0e06;
+      color: #6a4a30;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    footer a { color: #d4a843; text-decoration: none; }
+  </style>
 </head>
 <body>
 
-<!-- EMAIL TOP BAR — always visible -->
-<div class="top-bar">
-  <span>✉ Write to me:</span> renuka_aghi@yahoo.com
-</div>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-brand" href="index.html">☽ Renuka Vedic Astrologer</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="writing/index.html">Articles</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<nav>
-  <a class="nav-logo" href="index.html">☽ Renuka Vedic Astrologer</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="writing/index.html">Articles</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-</nav>
-
-<section class="hero">
-  <p class="hero-sub">Jyotish · The Science of Light</p>
-  <h1>Ancient Stars,<br><em>Modern Guidance</em></h1>
-  <div class="divider"></div>
-  <p class="hero-desc">Exploring the wisdom of Vedic astrology — Nakshatras, planetary transits, Dasha cycles, and the timeless language of the cosmos.</p>
-</section>
-
-<div class="symbol-row">☉ ☽ ♂ ☿ ♃ ♀ ♄</div>
-
-<section class="section" id="articles">
-  <p class="section-label">Latest Articles</p>
-  <h2 class="section-title">From the Blog</h2>
-  <div class="posts-grid">
-    <a class="post-card" href="writing/nakshatras-27-lunar-mansions.html">
-      <p class="post-tag">Nakshatras</p>
-      <h3>The 27 Nakshatras: Lunar Mansions of the Sky</h3>
-      <p>A foundational guide to the 27 Nakshatras — the star clusters that form the backbone of Jyotish and reveal the soul's deeper journey.</p>
-      <p class="post-date">May 2025</p>
-    </a>
-    <a class="post-card" href="writing/saturn-return-shani.html">
-      <p class="post-tag">Planets</p>
-      <h3>Saturn's Return: What Shani Teaches Us</h3>
-      <p>Saturn, the great karmic teacher, completes a cycle roughly every 29 years. What does it mean when Shani returns to its natal position?</p>
-      <p class="post-date">April 2025</p>
-    </a>
-    <a class="post-card" href="writing/vimshottari-dasha-guide.html">
-      <p class="post-tag">Dasha Cycles</p>
-      <h3>Understanding Vimshottari Dasha: Your Life's Timeline</h3>
-      <p>The Vimshottari Dasha system assigns planetary periods to each soul's journey across 120 years — a roadmap written in the stars.</p>
-      <p class="post-date">March 2025</p>
-    </a>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-symbol">☉ ☽ ♂ ☿ ♃ ♀ ♄</div>
+    <h1>Where Planets Meet Plants</h1>
+    <p class="hero-tagline">Vedic Astrology | Natural Living | Gurgaon</p>
+    <p class="hero-sub">Jyotish · The Science of Light</p>
+    <p>Ancient wisdom for modern life — birth charts, Kundali Milan, Dasha analysis and personalised guidance in Hindi and English.</p>
+    <a href="#contact" class="hero-btn">Book a Consultation</a>
   </div>
-  <a class="view-all" href="writing/index.html">View all articles →</a>
-</section>
 
-<section class="about-strip" id="about">
-  <p class="section-label">About</p>
-  <h2>Rooted in tradition, speaking to the present</h2>
-  <p>I am a practicing Vedic astrologer with a deep reverence for the Jyotish tradition. My work bridges the ancient wisdom of the Rishis with the lived realities of modern seekers — helping individuals navigate time, karma, and their unique dharmic path.</p>
-  <p class="about-email">✉ renuka_aghi@yahoo.com</p>
-</section>
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Consultations</h2>
+    <p>All readings are personalised — no generic predictions. Simple, practical and ethical guidance you can follow yourself. No gemstones. No expensive remedies.</p>
 
-<footer>
-  <p>© 2025 <span>Renuka Vedic Astrologer</span> · All rights reserved</p>
-  <span class="footer-email">✉ renuka_aghi@yahoo.com</span>
-</footer>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Single Question</h3>
+        <div class="price">₹500</div>
+        <p>One focused question answered with full chart analysis.</p>
+      </div>
+      <div class="service-card">
+        <h3>Full Horoscope Reading</h3>
+        <div class="price">₹2000</div>
+        <p>Complete birth chart reading — personality, career, marriage, health and Dasha timing.</p>
+      </div>
+      <div class="service-card">
+        <h3>Kundali Milan</h3>
+        <div class="price">₹1000</div>
+        <p>Compatibility analysis for marriage — Gun Milan, D9 Navamsha and Dasha assessment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section id="articles">
+    <h2>From the Blog</h2>
+
+    <div class="articles-grid">
+      <a class="article-card" href="writing/nakshatras-27-lunar-mansions.html">
+        <div class="article-tag">Nakshatras</div>
+        <h3>The 27 Nakshatras: Lunar Mansions of the Sky</h3>
+        <p>A foundational guide to the 27 Nakshatras — the star clusters that form the backbone of Jyotish.</p>
+      </a>
+      <a class="article-card" href="writing/saturn-return-shani.html">
+        <div class="article-tag">Planets</div>
+        <h3>Saturn's Return: What Shani Teaches Us</h3>
+        <p>Saturn completes a cycle roughly every 29 years. What does it mean when Shani returns?</p>
+      </a>
+      <a class="article-card" href="writing/vimshottari-dasha-guide.html">
+        <div class="article-tag">Dasha Cycles</div>
+        <h3>Understanding Vimshottari Dasha: Your Life's Timeline</h3>
+        <p>The Vimshottari Dasha system — a roadmap written in the stars across 120 years.</p>
+      </a>
+    </div>
+
+    <a class="view-all" href="writing/index.html">View all articles →</a>
+  </section>
+
+  <!-- ABOUT -->
+  <div class="about-section" id="about">
+    <div class="about-inner">
+      <h2>About Renuka Aghi</h2>
+      <p>I am a practicing Vedic astrologer based in Gurgaon. Trained at Future Point New Delhi — one of India's most respected astrology institutions — I bring classical Jyotish knowledge to personalised, practical readings.</p>
+      <p style="margin-top:1rem;">My work covers birth charts, Kundali Milan, Dasha analysis, career, marriage and health guidance. I offer consultations in both Hindi and English. My approach is rooted in classical Vedic tradition — ethical, honest and genuinely helpful.</p>
+      <p style="margin-top:1rem;">I am also a natural living enthusiast and blogger — growing my own herbs and practicing Ayurvedic living daily. Astrology and nature are deeply connected in my life and work.</p>
+
+      <div class="credentials">
+        <span class="credential-tag">Future Point New Delhi</span>
+        <span class="credential-tag">Birth Chart Readings</span>
+        <span class="credential-tag">Kundali Milan</span>
+        <span class="credential-tag">Dasha Analysis</span>
+        <span class="credential-tag">Hindi & English</span>
+        <span class="credential-tag">Natural Living</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-box" id="contact">
+    <h2>Book a Consultation</h2>
+    <p>Available via WhatsApp and email.</p>
+    <p>Consultations in Hindi and English.</p>
+    <p>Based in Gurgaon, India.</p>
+
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:renuka_aghi@yahoo.com">✉ Email Me</a>
+      <a class="contact-link" href="https://wa.me/91XXXXXXXXXX">💬 WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Renuka Aghi · Vedic Astrologer · Gurgaon · <a href="mailto:renuka_aghi@yahoo.com">renuka_aghi@yahoo.com</a></p>
+  </footer>
 
 </body>
 </html>
